@@ -1,11 +1,25 @@
 <html>
-    <style type='text/css'>
-        body{
-            font-family: sans-serif;
-            font-size: 14px;
-        }
-    </style>
+    <head>
+        <style>
+            body{
+                font-family: sans-serif;
+                font-size: 14px;
+            }
+        </style>
+        <title> Test Blog, to be adapted to sketches</title>
+    </head>
     <body>
-        <p>Right, this is the default page for the blog.</p>
+        <div>
+            <h1><a href="">List of Entries/Sketches</a></h1>
+        </div>
+
+        {% for post in posts %}
+            <div>
+                <p> published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+
     </body>
 </html>
