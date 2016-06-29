@@ -10,7 +10,12 @@
 </head>
 <body>
     <div class="page-header">
-        <h1><a ref="/">skWiki 2.0</a><h1>
+        {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        {% endif %}
+        <h1><a href="/">skWiki 2.0</a><h1>
         <h4>An attempt at a pure JavaScript version of the original</h4>
     </div>
 
